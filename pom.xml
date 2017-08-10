@@ -85,6 +85,7 @@
 			<id>imagej.public</id>
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
+		
 	</repositories>
 
 	<dependencies>
@@ -92,5 +93,13 @@
 			<groupId>net.imagej</groupId>
 			<artifactId>imagej</artifactId>
 		</dependency>
+				<dependency>
+      		<groupId>org.jogamp.gluegen</groupId>
+      		<artifactId>gluegen-rt-main</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.jogamp.jogl</groupId>
+      		<artifactId>jogl-all-main</artifactId>
+    	</dependency>
 	</dependencies>
 </project>

@@ -14,7 +14,6 @@ import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.ui.UIService;
 
-
 /**
  * This plugin show a minimal example for using JOGL dependency in an IJ Command.
  * It currently creates an error because of a conflict with the Java-8 update site.
@@ -35,9 +34,12 @@ public class MinJOGLIJCommand implements Command {
 
     @Override
     public void run() {
-        uiService.show("Running MinJOGLIJCommand, yipee!");
+        uiService.show("Running MinJOGLIJCommand");
+        // Creates a new JOGL window
+        new JOGLWindowTest();
+        uiService.show("A new JOGL window has appeared. It should change color randomly upon image resizing. Try it!");
     }
-
+    
     /**
      * This main function serves for development purposes.
      * It allows you to run the plugin immediately out of
