@@ -1,14 +1,16 @@
-This is an example Maven project implementing an ImageJ command, with a JOGL dependency.
+This is a simple ImageJ2 Command with JOGL maven dependencies.
+Natives loading in Fiji can be tedious (cf http://forum.imagej.net/t/fiji-command-unable-to-find-jogl-library-minimal-example/6484).
+In this branch, two problems are overcomed :
 
-This plugin show a minimal example for using JOGL dependency in an IJ Command.
-It currently creates an error because of a conflict with the Java-8 update site.
-It doesn't work within an update sites because the natives can't be found.
-Where the problem exactly lies and how this should be solved ? 
-* I don't know!
+1. By using <scope>provided</scope> into pom files (thanks @stelfrich), the jogl jars are not overriden during deployement of the plugin
+
+2. By using a dirty hack, JOGL natives are loaded by executing a dummy groovy script before any JOGL method is called (thanks @imagejan and @kephale).
+
+It works, but it's ugly, but it works.
 
 GAV used in the project : 
 
-		<dependency>
+	<dependency>
       		<groupId>org.jogamp.gluegen</groupId>
       		<artifactId>gluegen-rt-main</artifactId>
     	</dependency>
