@@ -84,8 +84,33 @@
 		<repository>
 			<id>imagej.public</id>
 			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>		
+		<repository>
+			<id>imagej.snapshots</id>
+			<url>http://maven.imagej.net/content/groups/public-snapshots</url>
 		</repository>
-		
+		<repository>
+			<id>imagej.other.snapshots</id>
+			<url>http://maven.imagej.net/content/repositories/snapshots</url>
+		</repository>		
+		<repository>
+			<id>clearcontrol</id>
+			<url>http://dl.bintray.com/clearcontrol/ClearControl</url>
+		</repository>
+		<repository>
+			<id>nativelibs</id>
+			<url>http://nativelibs4java.sourceforge.net/maven</url>
+		</repository>		
+		<repository>
+			<id>bintray-CoreMem</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/clearcontrol/ClearControl</url>
+		</repository>
+		<repository>
+			<id>bintray-clearvolume-ClearVolume</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/clearvolume/ClearVolume</url>
+		</repository>		
 	</repositories>
 
 	<dependencies>
@@ -103,5 +128,10 @@
       		<artifactId>jogl-all-main</artifactId>      		
       		<scope>provided</scope>
     	</dependency>
+    	<dependency>
+			<groupId>sc.iview</groupId>	
+			<artifactId>sciview</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
