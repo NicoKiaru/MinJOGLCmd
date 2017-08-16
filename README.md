@@ -13,8 +13,10 @@ GAV used in the project :
 	<dependency>
       		<groupId>org.jogamp.gluegen</groupId>
       		<artifactId>gluegen-rt-main</artifactId>
+		<scope>provided</scope>
     	</dependency>
     	<dependency>
       		<groupId>org.jogamp.jogl</groupId>
       		<artifactId>jogl-all-main</artifactId>
+		<scope>provided</scope>
     	</dependency>
