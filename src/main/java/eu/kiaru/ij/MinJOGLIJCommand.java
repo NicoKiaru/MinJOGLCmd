@@ -16,24 +16,26 @@ import org.scijava.ui.UIService;
 
 /**
  * This plugin show a minimal example for using JOGL dependency in an IJ Command.
- * It currently creates an error because of a conflict with the Java-8 update site.
- * It doesn't work within an update sites because the natives can't be found.
- * Where the problem exactly lies and how this should be solved ? 
- * <p>
- * I don't know!
- * </p>
+ * Natives loading is failing with JOGL with an ImageJ2 command, as of 15th August 2017
+ * see http://forum.imagej.net/t/fiji-command-unable-to-find-jogl-library-minimal-example/6484/28
+ *  - > this branch shows how to overcome the problem by executing a dummy groovy script
+ *  groovy execution with the proper import is able to load correclty the natives
+ *  // TO FIX
+ *  It works, but it's ugly, but it works, but it's ugly. 
+ *  
+ *  Note the JOGLLoader class should be changed for other versions of JOGL (GL3 / GL4...)
  */
 @Plugin(type = Command.class, menuPath = "Plugins>MinJOGLIJCommand")
 public class MinJOGLIJCommand implements Command {
-    //
+	//
     // Parameters here
     //
-
     @Parameter
     private UIService uiService;
 
     @Override
     public void run() {
+    	JOGLLoader.LoadNatives_GL2();
         uiService.show("Running MinJOGLIJCommand");
         // Creates a new JOGL window
         new JOGLWindowTest();
