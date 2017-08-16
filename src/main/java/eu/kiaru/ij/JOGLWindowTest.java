@@ -17,7 +17,7 @@ import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.GLProfile;
 
-public class JOGLWindowTest implements GLEventListener {
+public class JOGLWindowTest { //implements GLEventListener {
 
 	int SIZE_X=300;
 	int SIZE_Y=300;
@@ -42,16 +42,16 @@ public class JOGLWindowTest implements GLEventListener {
         glWindow.setTitle("JOGLWindowTest");
         glWindow.setSize(SIZE_X, SIZE_Y);
         glWindow.setVisible(true);
-        glWindow.addGLEventListener(this);
+        //glWindow.addGLEventListener(this);
 	}
 	
-	@Override
+	//@Override
     public final void init(GLAutoDrawable drawable) {
         GL gl = drawable.getGL().getGL2();
         // Nothing particular in this test
     }
 
-	@Override
+	//@Override
 	public void display(GLAutoDrawable drawable) {
         GL2 gl2 = drawable.getGL().getGL2();
 		// TODO Auto-generated method stub
@@ -61,13 +61,13 @@ public class JOGLWindowTest implements GLEventListener {
         gl2.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
-	@Override
+	//@Override
 	public void dispose(GLAutoDrawable drawable) {
         GL gl = drawable.getGL().getGL2();
         assert end(gl);
 	}
 
-    @Override
+    //@Override
     public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height) {
         GL gl = drawable.getGL().getGL2();
         SIZE_X=width;
